@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="x-demo-project" content="d1-tow">
   <title>Тяга — перевозка автомобилей эвакуатором (демо)</title>
-  <meta name="description" content="Демонстрационная страница: перевозка легкового автомобиля эвакуатором — маршрут, состояние машины и согласование условий.">
+  <meta name="description" content="Демонстрационная страница: перевозка автомобиля на платформе, малой техники и грузов. Порядок помощи и согласование погрузки.">
   <meta name="theme-color" content="#F6F5F2">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2312203A'/%3E%3Cpath d='M16 6l6 14h-2.4l-1.2-3h-4.8l-1.2 3H10z' fill='%23C85103'/%3E%3Crect x='7' y='24' width='18' height='2' rx='1' fill='%23FFFFFF'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
@@ -47,19 +47,14 @@
           </div>
           <p class="hero-note" id="hero-note">Кнопка откроет черновик обращения: скопируйте текст и заполните его своими данными. Отправка в демо не выполняется.</p>
         </div>
-        <figure class="hero-figure">
-          <div class="hero-photo-frame">
-            <picture>
-              <source type="image/webp" srcset="assets/tow-640.webp 640w, assets/tow-1200.webp 1200w" sizes="(min-width: 1200px) 550px, (min-width: 900px) 48vw, calc(100vw - 32px)">
-              <img class="hero-photo" src="assets/tow-1200.jpg" width="1200" height="750" alt="Легковой автомобиль на платформе эвакуатора" fetchpriority="high" decoding="async">
-            </picture>
-            <div class="photo-label" aria-hidden="true"><span>Из точки А</span><span class="route-line"></span><span>В точку Б</span></div>
-          </div>
-          <figcaption>
-            <span class="fig-legend">Автомобиль — на платформе. Условия — до выезда.</span>
-            Иллюстративное фото, не автопарк «Тяги».
-            <span class="photo-credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:Dacia_Logan_sur_d%C3%A9panneuse.jpg">Cjp24 / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Кадрировано.</span>
-          </figcaption>
+        <figure class="help-scheme" aria-labelledby="scheme-title">
+          <figcaption id="scheme-title">От поломки до места назначения</figcaption>
+          <ol class="help-route">
+            <li><span class="route-number">01</span><svg viewBox="0 0 100 60" aria-hidden="true" focusable="false" fill="none" stroke="#12203A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42v-12l12-3 9-13h29l12 14 12 4v10Z" fill="#FBE9D4"/><path d="m33 17-7 11h42l-9-11Z" fill="#fff"/><circle cx="28" cy="43" r="7" fill="#12203A"/><circle cx="70" cy="43" r="7" fill="#12203A"/><path d="m80 12 7-5m-3 14h9m-16-17 2-6" stroke="#C85103"/></svg><div><h3>Машина не едет</h3><p>Поломка или повреждение — нужна перевозка.</p></div></li>
+            <li><span class="route-number">02</span><svg viewBox="0 0 100 60" aria-hidden="true" focusable="false" fill="none" stroke="#12203A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="17" y="5" width="30" height="46" rx="6" fill="#fff"/><path d="M27 12h10M29 44h6"/><path d="M57 13h32v23H72l-9 8v-8h-6Z" fill="#FBE9D4"/><path d="m65 24 6 5 10-11" stroke="#C85103"/></svg><div><h3>Помощь согласована</h3><p>Вы описали ситуацию. Условия и время ясны — ждёте эвакуатор.</p></div></li>
+            <li><span class="route-number">03</span><svg viewBox="0 0 100 60" aria-hidden="true" focusable="false" fill="none" stroke="#12203A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 39h60V21h17l12 13v12H5Z" fill="#FBE9D4"/><path d="M70 25h10l9 10H70Z" fill="#fff"/><path d="M5 37h57" stroke="#C85103"/><circle cx="22" cy="47" r="6" fill="#12203A"/><circle cx="79" cy="47" r="6" fill="#12203A"/><g transform="translate(3 7) scale(.62)"><path d="M12 42v-12l12-3 9-13h29l12 14 12 4v10Z" fill="#FBE9D4"/><path d="m33 17-7 11h42l-9-11Z" fill="#fff"/><circle cx="28" cy="43" r="7" fill="#12203A"/><circle cx="70" cy="43" r="7" fill="#12203A"/></g></svg><div><h3>Эвакуатор приехал</h3><p>Подбираем погрузку, размещаем и закрепляем машину на платформе. Везём по маршруту.</p></div></li>
+            <li><span class="route-number">04</span><svg viewBox="0 0 100 60" aria-hidden="true" focusable="false" fill="none" stroke="#12203A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42v-12l12-3 9-13h29l12 14 12 4v10Z" fill="#FBE9D4"/><path d="m33 17-7 11h42l-9-11Z" fill="#fff"/><circle cx="28" cy="43" r="7" fill="#12203A"/><circle cx="70" cy="43" r="7" fill="#12203A"/><circle cx="80" cy="13" r="12" fill="#fff"/><path d="m74 13 4 4 8-9" stroke="#C85103"/></svg><div><h3>Машина доставлена</h3><p>На месте ремонта, стоянки или по другому согласованному адресу.</p></div></li>
+          </ol>
         </figure>
       </div>
     </section>
@@ -69,11 +64,13 @@
         <p class="section-num">01</p>
         <h2 id="kogda-title">Когда это подходит</h2>
         <ul class="split-list">
-          <li><strong>Перевозка легкового автомобиля</strong><span>между адресами — на ходу или без хода.</span></li>
-          <li><strong>Нестандартные автомобили</strong><span>низкий клиренс, заниженная подвеска, спущенные колёса — по согласованию.</span></li>
-          <li><strong>Доставка к месту ремонта или стоянки</strong><span>после поломки, ДТП без пострадавших, покупки машины.</span></li>
-          <li><strong>Манипулятор и погрузчик</strong><span>отдельные работы — по запросу и под конкретную задачу.</span></li>
+          <li><strong>Сломанный или повреждённый автомобиль</strong><span>Доставка к месту ремонта или стоянки с учётом состояния машины.</span></li>
+          <li><strong>Исправная машина, которой нельзя ехать</strong><span>Перевозка на платформе, в том числе без допуска к эксплуатации.</span></li>
+          <li><strong>Малая техника</strong><span>Уточним массу, размеры и возможность погрузки.</span></li>
+          <li><strong>Другие грузы</strong><span>В том числе необычной формы или размеров — после оценки груза, маршрута и погрузки.</span></li>
+          <li><strong>Работы манипулятором</strong><span>Отдельная погрузка или разгрузка — по согласованной задаче.</span></li>
         </ul>
+        <p class="hint">Для техники и грузов уточняем массу, размеры, подъезд и погрузку. Возможность работ зависит от грузоподъёмности, вылета стрелы и необходимых согласований.</p>
         <p class="hint">ДТП с пострадавшими — это 112 и аварийные службы, а не услуга перевозки.</p>
       </div>
     </section>
@@ -84,11 +81,10 @@
         <h2 id="soobshit-title">Что сообщить диспетчеру</h2>
         <p class="section-lead">Чем полнее первое сообщение, тем быстрее диспетчер скажет, возможна ли перевозка и сколько она будет стоить.</p>
         <ol class="checklist">
-          <li><strong>Откуда и куда</strong> — адреса или ориентиры, условия погрузки и выгрузки.</li>
-          <li><strong>Автомобиль</strong> — марка, модель, на ходу или нет, работают ли руль и тормоза.</li>
-          <li><strong>Когда</strong> — дата и время перевозки, срочность.</li>
-          <li><strong>Особенности</strong> — низкий клиренс, спущенные колёса, нет ключей, сигнализация.</li>
-          <li><strong>Что везём вместе с машиной</strong> — личные вещи, шины, документы.</li>
+          <li><strong>Что перевозим</strong> — автомобиль (марка и модель), техника или другой груз; примерная масса и размеры.</li>
+          <li><strong>Откуда и куда</strong> — адреса или ориентиры, условия подъезда, погрузки и выгрузки.</li>
+          <li><strong>Состояние</strong> — можно ли перемещать груз; у машины — работают ли руль и тормоза, вращаются ли колёса, есть ли ключи.</li>
+          <li><strong>Когда нужна помощь</strong> — дата, время и нужна ли только погрузка или разгрузка.</li>
         </ol>
         <p>
           <button class="btn btn-secondary" id="open-memo" type="button">Открыть черновик обращения</button>
@@ -111,10 +107,10 @@
           </div>
           <div class="term-row">
             <dt>Стоимость</dt>
-            <dd>уточняется до начала перевозки: маршрут, состояние машины и время.</dd>
+            <dd>уточняется до начала перевозки: маршрут, масса, размеры, состояние груза и условия погрузки.</dd>
           </div>
           <div class="term-row">
-            <dt>Манипулятор и погрузчик</dt>
+            <dt>Манипулятор</dt>
             <dd>отдельные работы — по запросу и под конкретную задачу.</dd>
           </div>
         </dl>
@@ -125,36 +121,12 @@
       <div class="wrap">
         <p class="section-num">04</p>
         <h2 id="poryadok-title">Как проходит перевозка</h2>
-        <ol class="steps">
-          <li>
-            <span class="step-num">1</span>
-            <div>
-              <h3>Маршрут и машина</h3>
-              <p>Сообщаете, откуда и куда везём, какая машина и в каком состоянии.</p>
-            </div>
-          </li>
-          <li>
-            <span class="step-num">2</span>
-            <div>
-              <h3>Уточнение условий</h3>
-              <p>Диспетчер называет возможность перевозки, цену и время.</p>
-            </div>
-          </li>
-          <li>
-            <span class="step-num">3</span>
-            <div>
-              <h3>Согласование</h3>
-              <p>Подтверждаете условия, точное место и время подачи.</p>
-            </div>
-          </li>
-          <li>
-            <span class="step-num">4</span>
-            <div>
-              <h3>Перевозка</h3>
-              <p>Эвакуатор забирает машину и доставляет по маршруту.</p>
-            </div>
-          </li>
-        </ol>
+        <p class="section-lead">Вам не нужно самому придумывать, как переместить машину или груз. Заранее уточним состояние и доступ к месту, согласуем подходящий способ погрузки.</p>
+        <div class="loading-note">
+          <h3>Если машина не может заехать на платформу</h3>
+          <p>Обсудим возможность погрузки манипулятором. Подходящий способ зависит от состояния, массы и конструкции автомобиля — манипулятор нужен не в каждом случае.</p>
+          <p>После погрузки машину или груз размещают на платформе и закрепляют подходящими для перевозки средствами. Подъём и крепление — разные этапы работы.</p>
+        </div>
       </div>
     </section>
 
@@ -222,13 +194,14 @@
             <button class="btn-close" id="memo-close" type="button" aria-label="Закрыть черновик">✕</button>
           </div>
           <p>Скопируйте текст, вставьте его в сообщение диспетчеру и заполните пустые строки своими данными.</p>
-          <textarea id="memo-text" readonly rows="9" aria-label="Текст обращения диспетчеру">Здравствуйте! Нужна перевозка автомобиля.
-Откуда:
-Куда:
-Автомобиль (марка, модель, на ходу или нет):
-Когда нужна перевозка:
-Особенности (низкий клиренс, руль, колёса, ключи):
-Подскажите, пожалуйста, возможность и стоимость перевозки.</textarea>
+          <textarea id="memo-text" readonly rows="9" aria-label="Текст обращения диспетчеру">Здравствуйте! Нужна перевозка или работа манипулятором.
+Что перевозим (автомобиль, техника, другой груз):
+Примерная масса и размеры:
+Откуда и куда:
+Состояние и возможность перемещения:
+Условия подъезда, погрузки и выгрузки:
+Когда нужна помощь:
+Подскажите, пожалуйста, возможность и стоимость работ.</textarea>
           <div class="memo-actions">
             <button class="btn btn-primary" id="memo-copy" type="button">Скопировать текст</button>
             <button class="btn btn-secondary" id="memo-close2" type="button">Закрыть</button>

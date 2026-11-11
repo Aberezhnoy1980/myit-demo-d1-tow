@@ -1,0 +1,466 @@
+{
+  "checks": [
+    {
+      "name": "360: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=360, viewport=360"
+    },
+    {
+      "name": "360: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "360: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "360: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "360: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "390: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=390, viewport=390"
+    },
+    {
+      "name": "390: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "390: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "390: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "390: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "язык, заголовок услуги, маркер демо",
+      "pass": true
+    },
+    {
+      "name": "липких элементов, перекрывающих контент, нет",
+      "pass": true,
+      "detail": "fixed/sticky: a"
+    },
+    {
+      "name": "768: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=768, viewport=768"
+    },
+    {
+      "name": "768: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "768: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "768: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "768: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "768: шапка в одну строку",
+      "pass": true
+    },
+    {
+      "name": "1024: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=1024, viewport=1024"
+    },
+    {
+      "name": "1024: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "1024: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "1024: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "1024: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "1024: шапка в одну строку",
+      "pass": true
+    },
+    {
+      "name": "1440: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=1440, viewport=1440"
+    },
+    {
+      "name": "1440: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "1440: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "1440: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "1440: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "1440: шапка в одну строку",
+      "pass": true
+    },
+    {
+      "name": "430: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=430, viewport=430"
+    },
+    {
+      "name": "430: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "430: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "430: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "430: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "899: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=899, viewport=899"
+    },
+    {
+      "name": "899: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "899: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "899: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "899: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "900: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=900, viewport=900"
+    },
+    {
+      "name": "900: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "900: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "900: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "900: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "zoom200-mobile: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=195, viewport=195"
+    },
+    {
+      "name": "zoom200-mobile: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=67px"
+    },
+    {
+      "name": "zoom200-mobile: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "zoom200-mobile: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "zoom200-mobile: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "zoom200-desktop: нет горизонтального переполнения",
+      "pass": true,
+      "detail": "scrollWidth=720, viewport=720"
+    },
+    {
+      "name": "zoom200-desktop: главная кнопка ≥56px в пределах экрана",
+      "pass": true,
+      "detail": "h=56px"
+    },
+    {
+      "name": "zoom200-desktop: схема из четырёх шагов в пределах экрана",
+      "pass": true
+    },
+    {
+      "name": "zoom200-desktop: длинная подпись кнопки не выходит за экран",
+      "pass": true
+    },
+    {
+      "name": "zoom200-desktop: основной текст ≥16px, мелкие подписи ≥14px",
+      "pass": true,
+      "detail": "readingMin=16, globalMin=14"
+    },
+    {
+      "name": "диалог открывается главной кнопкой, фокус на «Скопировать текст»",
+      "pass": true,
+      "detail": "{\"open\":true,\"active\":\"memo-copy\"}"
+    },
+    {
+      "name": "в момент скриншота диалог был открыт",
+      "pass": true
+    },
+    {
+      "name": "Tab на последнем элементе заворачивает на первый",
+      "pass": true,
+      "detail": "active=memo-close"
+    },
+    {
+      "name": "Shift+Tab на первом элементе заворачивает на последний",
+      "pass": true,
+      "detail": "active=memo-close2"
+    },
+    {
+      "name": "клик внутри поля диалога не закрывает его",
+      "pass": true
+    },
+    {
+      "name": "клик вне диалога не закрывает его (закрытия по backdrop нет)",
+      "pass": true
+    },
+    {
+      "name": "Esc закрывает диалог, фокус возвращается на главную кнопку",
+      "pass": true,
+      "detail": "{\"open\":false,\"active\":\"main-cta\"}"
+    },
+    {
+      "name": "кнопка «Закрыть» закрывает диалог, фокус на кнопке-триггере",
+      "pass": true,
+      "detail": "{\"open\":false,\"active\":\"open-memo\"}"
+    },
+    {
+      "name": "ветка 1: текст подтверждённо в буфере (readText)",
+      "pass": true,
+      "detail": "via=Здравствуйте! Нужна перевозка или работа"
+    },
+    {
+      "name": "ветка 2: API отклонён → execCommand, статус «скопирован»",
+      "pass": true,
+      "detail": "via=err:Error, status=\"Текст скопирован. Вставьте его в сообщение диспетч\""
+    },
+    {
+      "name": "ветка 3: полный отказ → инструкция ручного копирования",
+      "pass": true,
+      "detail": "status=\"Автоматически скопировать не удалось. Текст выделен — нажмите Ctrl+C (Windows) и\""
+    },
+    {
+      "name": "конфигурация «empty»: состояние страницы",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "конфигурация «empty»: клиентский текст без внутренних слов",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «empty»: hero-пояснение про черновик",
+      "pass": true
+    },
+    {
+      "name": "empty: нижний триггер открывает диалог, фокус на «Скопировать текст»",
+      "pass": true,
+      "detail": "{\"open\":true,\"active\":\"memo-copy\"}"
+    },
+    {
+      "name": "empty: Esc возвращает фокус именно на нижний триггер",
+      "pass": true,
+      "detail": "{\"open\":false,\"active\":\"contact-draft\"}"
+    },
+    {
+      "name": "empty: кнопка «Закрыть» возвращает фокус на нижний триггер",
+      "pass": true,
+      "detail": "{\"open\":false,\"active\":\"contact-draft\"}"
+    },
+    {
+      "name": "конфигурация «empty»: без ошибок/предупреждений консоли",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "конфигурация «phone-only»: состояние страницы",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "конфигурация «phone-only»: клиентский текст без внутренних слов",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «phone-only»: тексты про звонок",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «phone-only»: без ошибок/предупреждений консоли",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "конфигурация «phone-only»: клик по CTA перехвачен, ухода со страницы нет",
+      "pass": true,
+      "detail": "main→tel:+70000000000, header→tel:+70000000000, path=/"
+    },
+    {
+      "name": "configured: черновик открывается вторичным действием, ссылка телефона на месте",
+      "pass": true,
+      "detail": "{\"open\":true,\"phoneSlot\":true}"
+    },
+    {
+      "name": "конфигурация «messenger-only»: состояние страницы",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "конфигурация «messenger-only»: клиентский текст без внутренних слов",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «messenger-only»: тексты про мессенджер",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «messenger-only»: без ошибок/предупреждений консоли",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "конфигурация «messenger-only»: клик по CTA перехвачен, ухода со страницы нет",
+      "pass": true,
+      "detail": "main→https://example.com/demo-messenger, header→https://example.com/demo-messenger, path=/"
+    },
+    {
+      "name": "конфигурация «both»: состояние страницы",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "конфигурация «both»: клиентский текст без внутренних слов",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «both»: без ошибок/предупреждений консоли",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "конфигурация «both»: клик по CTA перехвачен, ухода со страницы нет",
+      "pass": true,
+      "detail": "main→tel:+70000000000, header→tel:+70000000000, path=/"
+    },
+    {
+      "name": "конфигурация «invalid»: состояние страницы",
+      "pass": true,
+      "detail": "ok"
+    },
+    {
+      "name": "конфигурация «invalid»: клиентский текст без внутренних слов",
+      "pass": true
+    },
+    {
+      "name": "конфигурация «invalid»: предупреждения в консоли (2)",
+      "pass": true,
+      "detail": "delta=2"
+    },
+    {
+      "name": "без JS черновик доступен как блок (атрибут open), текст на месте",
+      "pass": true,
+      "detail": "{\"memoOpen\":true,\"memoText\":298,\"phoneDisabled\":true,\"sections\":7,\"overflow\":false,\"strip\":true,\"ctaLabel\":\"Попробовать обращение\",\"contactTitle\":\"Попробовать обращение\",\"draftHref\":\"#memo\"}"
+    },
+    {
+      "name": "без JS секции/маркер на месте, нет переполнения, кнопки отключены",
+      "pass": true
+    },
+    {
+      "name": "без JS нижнее действие — якорь к статичному черновику, заголовок раздела совпадает",
+      "pass": true,
+      "detail": "draftHref=#memo, title=\"Попробовать обращение\""
+    },
+    {
+      "name": "нет фото/видео и их запросов; четыре SVG-сцены",
+      "pass": true,
+      "detail": "{\"photos\":0,\"scenes\":4,\"resources\":[\"http://127.0.0.1:8123/styles.css\",\"http://127.0.0.1:8123/config.js\",\"http://127.0.0.1:8123/app.js\"]}"
+    },
+    {
+      "name": "reduced motion: прокрутка без анимации",
+      "pass": true
+    },
+    {
+      "name": "префикс: CSS/JS и схема работают",
+      "pass": true
+    },
+    {
+      "name": "консоль: только ожидаемые 2 предупреждения сценария invalid",
+      "pass": true,
+      "detail": "warning: config: phone не прошёл проверку URL (ожидается tel:+…). Кнопка остаётся не настроенной. | warning: config: messenger не прошёл проверку URL (ожидается https://…). Кнопка остаётся не настроенной."
+    },
+    {
+      "name": "нет упавших запросов и статусов 4xx/5xx",
+      "pass": true,
+      "detail": "чисто"
+    }
+  ],
+  "consoleErrors": [
+    "warning: config: phone не прошёл проверку URL (ожидается tel:+…). Кнопка остаётся не настроенной.",
+    "warning: config: messenger не прошёл проверку URL (ожидается https://…). Кнопка остаётся не настроенной."
+  ],
+  "networkErrors": []
+}

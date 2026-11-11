@@ -14,7 +14,7 @@ const ROOT = process.cwd();
 const PORT = 8123;
 const BASE = `http://127.0.0.1:${PORT}/`;
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const SHOTS = join(ROOT, "docs", "screenshots");
+const SHOTS = join(ROOT, "docs", "illustrated-20", "screenshots");
 mkdirSync(SHOTS, { recursive: true });
 
 const results = { checks: [], consoleErrors: [], networkErrors: [] };
@@ -191,7 +191,7 @@ const GEOMETRY = `(() => {
     })(),
     mainCtaH: Math.round(document.getElementById("main-cta")?.getBoundingClientRect().height || 0),
     mainCtaInViewport: (() => { const r = document.getElementById("main-cta")?.getBoundingClientRect(); return !!r && r.left >= 0 && r.right <= inner + 1; })(),
-    imageVisible: (() => { const img = document.querySelector(".hero-photo"); const r = img?.getBoundingClientRect(); return !!r && r.width > 0 && r.right <= inner + 1 && img.complete && img.naturalWidth > 0; })(),
+    imageVisible: (() => { const e = document.querySelector(".help-scheme"); const r = e?.getBoundingClientRect(); return !!r && r.width > 0 && r.right <= inner + 1 && e.querySelectorAll("li").length === 4; })(),
     stickyList: [...document.querySelectorAll("*")]
       .filter((e) => { const p = getComputedStyle(e).position; return visible(e) && (p === "sticky" || p === "fixed"); })
       .map((e) => e.id || e.tagName.toLowerCase()).slice(0, 6),
@@ -215,7 +215,7 @@ async function runGeometry(cdp, label) {
   const g = await evalJs(cdp, GEOMETRY);
   note(`${label}: нет горизонтального переполнения`, !g.overflow, `scrollWidth=${g.scrollWidth}, viewport=${g.vw}`);
   note(`${label}: главная кнопка ≥56px в пределах экрана`, g.mainCtaInViewport && g.mainCtaH >= 56, `h=${g.mainCtaH}px`);
-  note(`${label}: фотография загружена и в пределах экрана`, g.imageVisible);
+  note(`${label}: схема из четырёх шагов в пределах экрана`, g.imageVisible);
   note(`${label}: длинная подпись кнопки не выходит за экран`, !g.longLabelOverflow);
   note(`${label}: основной текст ≥16px, мелкие подписи ≥14px`, g.readingMin >= 16 && g.globalMin >= 14, `readingMin=${g.readingMin}, globalMin=${g.globalMin}`);
   if (["768", "1024", "1440"].includes(label)) {
@@ -312,7 +312,7 @@ try {
   /* ================= размеры экранов (empty) ================= */
   const sizes = [
     [360, 780, "360"], [390, 844, "390"], [768, 1024, "768"], [1024, 900, "1024"],
-    [1440, 900, "1440"], [195, 844, "zoom200-mobile"], [720, 900, "zoom200-desktop"],
+    [1440, 900, "1440"], [430, 900, "430"], [899, 900, "899"], [900, 900, "900"], [195, 844, "zoom200-mobile"], [720, 900, "zoom200-desktop"],
   ];
   for (const [w, h, label] of sizes) {
     /* zoom200-* — эмуляция масштаба 200% как reflow вдвое меньшего CSS-вьюпорта;
@@ -588,8 +588,32 @@ try {
   /* ================= локальные медиа ================= */
   await cdp.send("Emulation.setScriptExecutionDisabled", { value: false });
   await cdp.loadPage(BASE);
-  const media = await evalJs(cdp, `(() => { const img = document.querySelector(".hero-photo"); return {loaded: img.complete && img.naturalWidth > 0, local: new URL(img.currentSrc).origin === location.origin, alt: img.alt, credit: !!document.querySelector('.photo-credit a[href*="creativecommons.org"]')}; })()`);
-  note("фото локальное, загружено, есть alt и ссылка на лицензию", media.loaded && media.local && media.alt.length > 10 && media.credit);
+  const media = await evalJs(cdp, `({ photos: document.querySelectorAll('img, picture, video, link[rel="preload"]').length, scenes: document.querySelectorAll('.help-route svg').length, resources: performance.getEntriesByType('resource').map(r => r.name) })`);
+  note("нет фото/видео и их запросов; четыре SVG-сцены", media.photos === 0 && media.scenes === 4 && !media.resources.some(u => /\.(webp|jpe?g|png|mp4)(?:$|\?)/i.test(u)), JSON.stringify(media));
+  await cdp.send("Emulation.setEmulatedMedia", {features:[{name:"prefers-reduced-motion", value:"reduce"}]});
+  note("reduced motion: прокрутка без анимации", await evalJs(cdp, `getComputedStyle(document.documentElement).scrollBehavior === 'auto'`));
+  await cdp.send("Emulation.setEmulatedMedia", {features:[]});
+  for (const width of [390, 1440]) {
+    await setViewport(cdp, width, 900, width === 390);
+    await cdp.loadPage(BASE);
+    await screenshot(cdp, `hero-${width}.png`);
+    await evalJs(cdp, `document.querySelector('.help-scheme').scrollIntoView({behavior:'instant', block:'start'})`);
+    await screenshot(cdp, `scheme-${width}.png`);
+    await evalJs(cdp, `document.querySelector('#main-cta').click()`);
+    await screenshot(cdp, `memo-${width}.png`);
+    await key(cdp, "Escape", "Escape", 27);
+  }
+  // Проверка полного публичного пути с префиксом, без второго сервера и внешних запросов.
+  await cdp.send("Fetch.enable", {patterns:[{urlPattern:`${BASE}preview/d1/*`, requestStage:"Request"}]});
+  cdp.on("Fetch.requestPaused", async p => {
+    const path = new URL(p.request.url).pathname.replace('/preview/d1/', '');
+    const response = await fetch(BASE + path);
+    const body = Buffer.from(await response.arrayBuffer()).toString('base64');
+    await cdp.send("Fetch.fulfillRequest", {requestId:p.requestId, responseCode:response.status, responseHeaders:[{name:'Content-Type',value:response.headers.get('content-type') || 'text/plain'}], body});
+  });
+  await cdp.loadPage(BASE + "preview/d1/index.html");
+  note("префикс: CSS/JS и схема работают", await evalJs(cdp, `getComputedStyle(document.body).backgroundColor === 'rgb(246, 245, 242)' && !document.querySelector('#memo').open && document.querySelectorAll('.help-route li').length === 4`));
+  await cdp.send("Fetch.disable");
 
   /* ================= консоль и сеть ================= */
   const expectedWarns = results.consoleErrors.filter((e) => e.includes("не прошёл проверку")).length;
@@ -608,6 +632,7 @@ try {
   if (server) server.kill("SIGTERM");
 }
 
+writeFileSync(join(SHOTS, "results.json"), JSON.stringify(results, null, 2) + "\n");
 const failed = results.checks.filter((c) => !c.pass);
 console.log(`\nИТОГО: ${results.checks.length - failed.length}/${results.checks.length} проверок пройдено`);
 if (failed.length) console.log("Не пройдено:\n" + failed.map((f) => " - " + f.name).join("\n"));

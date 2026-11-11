@@ -1,0 +1,7 @@
+{
+  "date": "2026-11-11",
+  "git_head": "fe4c675ec109c3d1b622f94eb37640eeda672600",
+  "initial_status": "clean",
+  "assignment": "business/portfolio/assignments/20-codex-d1-illustrated-services.md",
+  "base_files": "base/ — исходные продуктовые файлы, README и tools из git archive HEAD; прежние docs и фото остаются в Git и исходном каталоге"
+}

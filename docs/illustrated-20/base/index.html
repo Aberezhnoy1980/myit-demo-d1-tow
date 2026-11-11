@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-demo-project" content="d1-tow">
+  <title>Тяга — перевозка автомобилей эвакуатором (демо)</title>
+  <meta name="description" content="Демонстрационная страница: перевозка легкового автомобиля эвакуатором — маршрут, состояние машины и согласование условий.">
+  <meta name="theme-color" content="#F6F5F2">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2312203A'/%3E%3Cpath d='M16 6l6 14h-2.4l-1.2-3h-4.8l-1.2 3H10z' fill='%23C85103'/%3E%3Crect x='7' y='24' width='18' height='2' rx='1' fill='%23FFFFFF'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">К содержанию</a>
+
+  <p class="demo-strip">Самостоятельное демо. Услуга не оказывается. Регион и график — условные.</p>
+
+  <header class="site-head">
+    <div class="wrap site-head-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Тяга</span>
+        <span class="brand-sub">помощь и перевозка</span>
+      </a>
+      <nav class="site-nav" aria-label="Разделы страницы">
+        <a href="#kogda">Услуга</a>
+        <a href="#poryadok">Порядок</a>
+        <a href="#usloviya">Условия</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contact">Контакт</a>
+      </nav>
+      <a class="btn btn-small btn-primary" id="header-cta" data-cta href="#contact">Попробовать обращение</a>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Перевозка легковых автомобилей</p>
+          <h1 id="hero-title">Перевозка автомобиля эвакуатором</h1>
+          <p class="lead">Назовите маршрут и состояние машины — диспетчер уточнит возможность, цену и время до начала перевозки.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="main-cta" data-cta href="#contact">Попробовать обращение</a>
+          </div>
+          <p class="hero-note" id="hero-note">Кнопка откроет черновик обращения: скопируйте текст и заполните его своими данными. Отправка в демо не выполняется.</p>
+        </div>
+        <figure class="hero-figure">
+          <div class="hero-photo-frame">
+            <picture>
+              <source type="image/webp" srcset="assets/tow-640.webp 640w, assets/tow-1200.webp 1200w" sizes="(min-width: 1200px) 550px, (min-width: 900px) 48vw, calc(100vw - 32px)">
+              <img class="hero-photo" src="assets/tow-1200.jpg" width="1200" height="750" alt="Легковой автомобиль на платформе эвакуатора" fetchpriority="high" decoding="async">
+            </picture>
+            <div class="photo-label" aria-hidden="true"><span>Из точки А</span><span class="route-line"></span><span>В точку Б</span></div>
+          </div>
+          <figcaption>
+            <span class="fig-legend">Автомобиль — на платформе. Условия — до выезда.</span>
+            Иллюстративное фото, не автопарк «Тяги».
+            <span class="photo-credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:Dacia_Logan_sur_d%C3%A9panneuse.jpg">Cjp24 / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Кадрировано.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="kogda" aria-labelledby="kogda-title">
+      <div class="wrap">
+        <p class="section-num">01</p>
+        <h2 id="kogda-title">Когда это подходит</h2>
+        <ul class="split-list">
+          <li><strong>Перевозка легкового автомобиля</strong><span>между адресами — на ходу или без хода.</span></li>
+          <li><strong>Нестандартные автомобили</strong><span>низкий клиренс, заниженная подвеска, спущенные колёса — по согласованию.</span></li>
+          <li><strong>Доставка к месту ремонта или стоянки</strong><span>после поломки, ДТП без пострадавших, покупки машины.</span></li>
+          <li><strong>Манипулятор и погрузчик</strong><span>отдельные работы — по запросу и под конкретную задачу.</span></li>
+        </ul>
+        <p class="hint">ДТП с пострадавшими — это 112 и аварийные службы, а не услуга перевозки.</p>
+      </div>
+    </section>
+
+    <section class="section" id="soobshit" aria-labelledby="soobshit-title">
+      <div class="wrap">
+        <p class="section-num">02</p>
+        <h2 id="soobshit-title">Что сообщить диспетчеру</h2>
+        <p class="section-lead">Чем полнее первое сообщение, тем быстрее диспетчер скажет, возможна ли перевозка и сколько она будет стоить.</p>
+        <ol class="checklist">
+          <li><strong>Откуда и куда</strong> — адреса или ориентиры, условия погрузки и выгрузки.</li>
+          <li><strong>Автомобиль</strong> — марка, модель, на ходу или нет, работают ли руль и тормоза.</li>
+          <li><strong>Когда</strong> — дата и время перевозки, срочность.</li>
+          <li><strong>Особенности</strong> — низкий клиренс, спущенные колёса, нет ключей, сигнализация.</li>
+          <li><strong>Что везём вместе с машиной</strong> — личные вещи, шины, документы.</li>
+        </ol>
+        <p>
+          <button class="btn btn-secondary" id="open-memo" type="button">Открыть черновик обращения</button>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="usloviya" aria-labelledby="usloviya-title">
+      <div class="wrap">
+        <p class="section-num">03</p>
+        <h2 id="usloviya-title">Условия</h2>
+        <dl class="terms">
+          <div class="term-row">
+            <dt>Регион</dt>
+            <dd>г. Северск и пригород — регион задан условно для демо.</dd>
+          </div>
+          <div class="term-row">
+            <dt>Режим работы</dt>
+            <dd>ежедневно 08:00–22:00 — условие демо.</dd>
+          </div>
+          <div class="term-row">
+            <dt>Стоимость</dt>
+            <dd>уточняется до начала перевозки: маршрут, состояние машины и время.</dd>
+          </div>
+          <div class="term-row">
+            <dt>Манипулятор и погрузчик</dt>
+            <dd>отдельные работы — по запросу и под конкретную задачу.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="poryadok" aria-labelledby="poryadok-title">
+      <div class="wrap">
+        <p class="section-num">04</p>
+        <h2 id="poryadok-title">Как проходит перевозка</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div>
+              <h3>Маршрут и машина</h3>
+              <p>Сообщаете, откуда и куда везём, какая машина и в каком состоянии.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div>
+              <h3>Уточнение условий</h3>
+              <p>Диспетчер называет возможность перевозки, цену и время.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div>
+              <h3>Согласование</h3>
+              <p>Подтверждаете условия, точное место и время подачи.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div>
+              <h3>Перевозка</h3>
+              <p>Эвакуатор забирает машину и доставляет по маршруту.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap">
+        <p class="section-num">05</p>
+        <h2 id="faq-title">Частые вопросы</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Сколько стоит перевозка?</summary>
+            <p>Зависит от маршрута, состояния автомобиля и времени. Точную цену диспетчер называет до начала перевозки.</p>
+          </details>
+          <details>
+            <summary>Работаете ли вы ночью?</summary>
+            <p>Режим в демо — ежедневно с 08:00 до 22:00. График указан для демонстрации.</p>
+          </details>
+          <details>
+            <summary>Перевезёте машину, которая не заводится?</summary>
+            <p>Возможность погрузки уточняется по состоянию автомобиля и условиям доступа. Сообщите состояние машины диспетчеру.</p>
+          </details>
+          <details>
+            <summary>Как быстро подадите эвакуатор?</summary>
+            <p>Время подачи согласуется при уточнении условий. Обещаний «приедем за N минут» здесь нет.</p>
+          </details>
+          <details>
+            <summary>Что значит «самостоятельное демо»?</summary>
+            <p>Страница показывает, как устроены услуга и обращение к диспетчеру. Реальных услуг она не оказывает, реальных клиентов и выездов у неё нет.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="section-num">06</p>
+        <h2 id="contact-title" data-contact-title>Попробовать обращение</h2>
+        <p class="section-lead" id="contact-intro">Контакты в этом демо не настроены, поэтому доступно действие «Попробовать обращение»: черновик текста с подсказками внутри. Отправка в демо не выполняется.</p>
+
+        <p class="contact-draft-action">
+          <a class="btn btn-primary" id="contact-draft" data-draft href="#memo">Попробовать обращение</a>
+        </p>
+
+        <div class="contact-cards">
+          <article class="contact-card" id="card-phone">
+            <h3>Телефон</h3>
+            <p class="contact-recipient" data-recipient hidden>Получатель: Диспетчер</p>
+            <div class="contact-slot" id="slot-phone">
+              <button class="btn btn-contact" type="button" data-contact="phone" disabled>Телефон не настроен</button>
+            </div>
+            <p class="contact-status" id="phone-status">В демо этот способ не настроен. Доступен черновик обращения.</p>
+          </article>
+          <article class="contact-card" id="card-messenger">
+            <h3>Мессенджер</h3>
+            <p class="contact-recipient" data-recipient hidden>Получатель: Диспетчер</p>
+            <div class="contact-slot" id="slot-messenger">
+              <button class="btn btn-contact" type="button" data-contact="messenger" disabled>Мессенджер не настроен</button>
+            </div>
+            <p class="contact-status" id="messenger-status">В демо этот способ не настроен. Доступен черновик обращения.</p>
+          </article>
+        </div>
+
+        <dialog class="memo-dialog" id="memo" open aria-labelledby="memo-title">
+          <div class="memo-head">
+            <h3 id="memo-title">Черновик обращения</h3>
+            <button class="btn-close" id="memo-close" type="button" aria-label="Закрыть черновик">✕</button>
+          </div>
+          <p>Скопируйте текст, вставьте его в сообщение диспетчеру и заполните пустые строки своими данными.</p>
+          <textarea id="memo-text" readonly rows="9" aria-label="Текст обращения диспетчеру">Здравствуйте! Нужна перевозка автомобиля.
+Откуда:
+Куда:
+Автомобиль (марка, модель, на ходу или нет):
+Когда нужна перевозка:
+Особенности (низкий клиренс, руль, колёса, ключи):
+Подскажите, пожалуйста, возможность и стоимость перевозки.</textarea>
+          <div class="memo-actions">
+            <button class="btn btn-primary" id="memo-copy" type="button">Скопировать текст</button>
+            <button class="btn btn-secondary" id="memo-close2" type="button">Закрыть</button>
+          </div>
+          <p class="memo-status" id="memo-status" role="status" aria-live="polite"></p>
+        </dialog>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <p>Тяга — демонстрационная страница. Услуга не оказывается.</p>
+      <p class="foot-small">Самостоятельное демо по заданию портфолио D1. Условные регион и график обозначены в условиях.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

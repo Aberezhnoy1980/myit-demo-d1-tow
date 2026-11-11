@@ -241,51 +241,24 @@ a { color: var(--accent-text); }
   padding-left: 12px;
 }
 
-/* Иллюстративная фотография */
-.hero-figure { margin: 0; }
-
-.hero-photo-frame {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #E9E6DF;
-  border: 1px solid var(--line);
-}
-
-.hero-photo-frame picture { display: block; }
-.hero-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 8 / 5;
-  object-fit: cover;
-}
-
-.photo-label {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  background: var(--ink);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 650;
-}
-.route-line { flex: 1; height: 1px; background: #9FB4CC; }
-.photo-credit { display: block; margin-top: 6px; font-size: 0.875rem; }
-.photo-credit a { text-underline-offset: 3px; }
-
-.hero-figure figcaption {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: var(--ink-soft);
-}
-
-.fig-legend {
-  display: block;
-  color: var(--ink);
-  font-weight: 650;
-  margin-bottom: 2px;
+/* Одна последовательность помощи; подписи остаются HTML без графики и JS. */
+.help-scheme { margin: 0; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.help-scheme figcaption { font-weight: 700; font-size: 1.0625rem; margin-bottom: 20px; }
+.help-route { list-style: none; margin: 0; padding: 0; }
+.help-route li { position: relative; display: grid; grid-template-columns: 26px 90px 1fr; gap: 12px; align-items: center; padding-bottom: 24px; min-width: 0; }
+.help-route li:last-child { padding-bottom: 0; }
+.help-route li:not(:last-child)::after { content: ""; position: absolute; left: 12px; top: 32px; bottom: 6px; width: 1px; background: var(--accent-line); }
+.route-number { color: var(--accent-text); font-size: .875rem; font-weight: 700; align-self: start; padding-top: 2px; }
+.help-route svg { display: block; width: 100%; height: auto; }
+.help-route h3 { font-size: 1.0625rem; margin: 0 0 5px; }
+.help-route p { color: var(--ink-soft); font-size: 1rem; line-height: 1.45; margin: 0; }
+.loading-note { border-left: 3px solid var(--accent-line); padding-left: 20px; max-width: 70ch; margin-top: 24px; }
+.loading-note p { color: var(--ink-soft); }
+@media (max-width: 420px) {
+  .help-scheme { padding: 18px 14px; }
+  .help-route li { grid-template-columns: 24px 1fr; gap: 8px 12px; }
+  .help-route svg { grid-column: 2; width: 100px; }
+  .help-route li > div { grid-column: 2; }
 }
 
 /* Секции */

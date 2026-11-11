@@ -1,0 +1,18 @@
+{
+  "index.html": {
+    "raw": 17848,
+    "gzip": 4889
+  },
+  "styles.css": {
+    "raw": 12606,
+    "gzip": 3807
+  },
+  "app.js": {
+    "raw": 11351,
+    "gzip": 3438
+  },
+  "config.js": {
+    "raw": 1943,
+    "gzip": 877
+  }
+}
