@@ -1,0 +1,50 @@
+/* Локальная копия токенов Siteappika. Никаких загрузок из Platform. */
+:root { --siteappika-bar-height:53px; }
+.siteappika-shell { position:sticky; top:0; z-index:60; }
+.siteappika-shell[data-project="kontur"] { position:fixed; inset:0 0 auto; }
+.siteappika-shell .siteappika-bar {
+  display:block; width:100%; margin:0; padding:0;
+  background:#f4f5f2; color:#14171c; border:0; border-bottom:1px solid #d3d6cf;
+  font:400 14px/20px system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  letter-spacing:normal; text-transform:none;
+}
+.siteappika-shell .siteappika-bar__inner {
+  box-sizing:border-box; display:flex; align-items:center; justify-content:space-between;
+  gap:12px; min-height:52px; width:min(calc(100% - 2 * clamp(16px,4.5vw,64px)),1248px);
+  margin:0 auto; padding:4px 0;
+}
+.siteappika-shell .siteappika-bar__return {
+  display:inline-flex; align-items:center; flex-shrink:0; min-height:44px;
+  margin:0; padding:0; border:0; background:none; box-shadow:none; border-radius:0;
+  color:#14171c; font:inherit; letter-spacing:normal; text-transform:none;
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px;
+}
+.siteappika-shell .siteappika-bar__return:hover { text-decoration-thickness:2px; }
+.siteappika-shell .siteappika-bar__return:focus-visible {
+  outline:3px solid #b4500a; outline-offset:3px; border-radius:0;
+}
+.siteappika-shell .siteappika-bar__label {
+  display:block; margin:0; padding:0; color:#14171c; font:inherit;
+  letter-spacing:normal; text-transform:none;
+}
+/* Высота строки зарезервирована без JS; на узком экране — две строки. */
+@media(max-width:379px) {
+  :root { --siteappika-bar-height:77px; }
+  .siteappika-shell .siteappika-bar__inner {
+    flex-direction:column; align-items:flex-start; justify-content:flex-start;
+    gap:0; min-height:76px;
+  }
+}
+@media(max-width:240px) {
+  :root { --siteappika-bar-height:97px; }
+  .siteappika-shell .siteappika-bar__inner { min-height:96px; }
+}
+/* Шапки остаются в одном закреплённом стеке с полосой. */
+.siteappika-shell[data-project="d2"] > .header { position:relative; top:auto; z-index:auto; }
+.siteappika-shell[data-project="kontur"] > .topbar { position:relative; inset:auto; }
+html { scroll-padding-top:calc(var(--siteappika-bar-height) + 100px); }
+.siteappika-shell[data-project="kontur"] ~ main .hero__content { padding-top:calc(120px + var(--siteappika-bar-height)); }
+@media(max-width:767px),(max-width:1023px) and (orientation:portrait) {
+  .siteappika-shell[data-project="kontur"] ~ main .hero__content { padding-top:4px; }
+  .siteappika-shell[data-project="kontur"] ~ main .hero__vtoggle { top:calc(88px + var(--siteappika-bar-height)); }
+}

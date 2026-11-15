@@ -6,7 +6,7 @@ import shutil
 import zipfile
 
 root = Path(__file__).resolve().parent.parent
-files = ["index.html", "styles.css", "config.js", "app.js"]
+files = ["index.html", "styles.css", "config.js", "app.js", "siteappika-shell.css", "siteappika-integration.css"]
 # Separate revision root preserves the historical photo release intact.
 public = root / "dist" / "illustrated-20" / "public"
 existing = {str(p.relative_to(public)) for p in public.rglob("*") if p.is_file()}
